@@ -1,0 +1,2 @@
+# Effctive CPP Note
+ 
