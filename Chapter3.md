@@ -61,9 +61,9 @@ Widget w2{10, true}; // calls the third one instead of the first
                        // (10 and true convert to long double)
 Widget w3(10, 5.0); // as normal, calls second constructor
 Widget w4{10, 5.0}; // calls the third one (10 and 5.0 convert to long double)
- ```
- Only if there’s no way to convert the types of the arguments in a braced initializer to the type in a **std::initializer_list** do compilers fall back on normal overload resolution.
- ```C++
+```
+Only if there’s no way to convert the types of the arguments in a braced initializer to the type in a **std::initializer_list** do compilers fall back on normal overload resolution.
+```C++
  class Widget {
  public:
   Widget(int i, bool b);
@@ -74,10 +74,10 @@ Widget w4{10, 5.0}; // calls the third one (10 and 5.0 convert to long double)
  Widget w1(10, true); // calls first ctor
  Widget w2{10, true}; // calls first ctor
                     // because there is no way to convert ints and bools to std::strings:
- ```
- ###  Tremendous difference between parentheses and braces when creating a std::vector< numeric type > with two arguments.
- ```C++
- std::vector<int> v1(10, 20); // use non-std::initializer_list ctor: 10-element
+```
+### Tremendous difference between parentheses and braces when creating a std::vector< numeric type > with two arguments.
+```C++
+std::vector<int> v1(10, 20); // use non-std::initializer_list ctor: 10-element
                               //  all elements have value of 20
 std::vector<int> v2{10, 20}; // use std::initializer_list ctor: 2-element
                              // element values are 10 and 20
