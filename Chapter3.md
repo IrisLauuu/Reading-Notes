@@ -37,16 +37,18 @@ int sum1{ x + y + z }; // error! sum of doubles cannot be expressible as int
 int sum2(x + y + z); //ok
 int sum3 = x + y + z;  //ok
 ```
-* It’s immune to C++’s **most vexing parse**.
+* It’s immune to C++’s **most vexing parse**.  
   **most vexing parse**: when default constructor is used to create an obj, it ends up declaring a function by accident.
-  ```C++
+```C++
   Widget w1(10); // fine, call constructor with 10
   Widget w2(); // most vexing parse! declares a function named w2 that returns a Widget!
   Widget w3{}; // calls Widget constructor with no args
                // fine, because functions cannot be declared using braces
 ```
+
 ### Disadvantages of uniform initialization
-* During constructor overload resolution, braced initializers are matched to **std::initializer_list** parameters if at all possible, even if other constructors offer seemingly better matches.
+
+* During constructor overload resolution, braced initializers are matched to **std::initializer_list** parameters if at all possible, even if other constructors offer seemingly better matches.  
 If one or more constructors declare a parameter of type **std::initializer_list**, calls using the braced initialization syntax strongly prefer the overloads taking **std::initializer_list**.
 ```C++
 class Widget {
