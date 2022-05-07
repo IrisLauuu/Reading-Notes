@@ -161,21 +161,21 @@ Enumerators of **scoped enums** convert to other types only with a cast.
 ## Item 11: Prefer deleted functions to private undefined ones.
 * Prevent a particular function from being called.
   C++98: use **private** to restrain accessibility
-  ```C++
-  template <class charT, class traits = char_traits<charT>>
-  class basic_ios : public ios_base {
-  private:
+```C++
+template <class charT, class traits = char_traits<charT>>
+class basic_ios : public ios_base {
+private:
     basic_ios(const basic_ios& ); // not defined
     basic_ios& operator=(const basic_ios&); // not defined
-  };
-  ```
+};
+```
   C++11: use **“= delete”** to mark functions as deleted functions. And public!
-  ```C++
-  template <class charT, class traits = char_traits<charT> >
+```C++
+template <class charT, class traits = char_traits<charT> >
 class basic_ios : public ios_base {
 public:
-    basic_ios(const basic_ios& ) = delete;
-    basic_ios& operator=(const basic_ios&) = delete;
+      basic_ios(const basic_ios& ) = delete;
+      basic_ios& operator=(const basic_ios&) = delete;
 };
 ```
 * **Any** function may be deleted, while only member functions may be private.
