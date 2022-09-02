@@ -3,3 +3,6 @@
  [Chapter 2. auto](https://github.com/IrisLauuu/Reading-Notes/blob/main/Effective-CPP/Chapter2.md)  
  [Chapter 3. Moving to Modern C++](https://github.com/IrisLauuu/Reading-Notes/blob/main/Effective-CPP/Chapter3.md)  
  [Chapter 4. Smart Pointers](https://github.com/IrisLauuu/Reading-Notes/blob/main/Effective-CPP/Chapter4.md)
+
+# Linux Getting Started
+[Chapter 1. Introduction to Linux](https://github.com/IrisLauuu/Reading-Notes/blob/main/Linux-Programming/01Introduction%20to%20Linux.md)
